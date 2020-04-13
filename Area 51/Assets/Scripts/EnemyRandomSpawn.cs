@@ -52,7 +52,7 @@ public class EnemyRandomSpawn : MonoBehaviour
             gameObject.SetActive(true);
             EnemyCountDisplay.enemies += 1;
             enemySpawnCounter -= 1;
-            Debug.Log(EnemyCountDisplay.enemies + " Enemy Spawn");
+            //Debug.Log(EnemyCountDisplay.enemies + " Enemy Spawn");
         }
     }
 }

@@ -27,6 +27,6 @@ public class WaveSystem : MonoBehaviour
             Time.timeScale = 0;
             inventoryMenu.canOpenInv = false;
         }
-        Debug.Log(EnemyRandomSpawn.enemySpawnInit + " en spawn init");
+        //Debug.Log(EnemyRandomSpawn.enemySpawnInit + " en spawn init");
     }
 }

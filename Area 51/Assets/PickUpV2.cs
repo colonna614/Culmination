@@ -13,8 +13,8 @@ public class PickUpV2 : MonoBehaviour
     void Start()
     {
         crate.gameObject.SetActive(true);
-        drive.gameObject.SetActive(false);
-        pickUpText.GetComponent<Text>().enabled = false;
+        //drive.gameObject.SetActive(false);
+       //pickUpText.GetComponent<Text>().enabled = false;
     }
     
 
@@ -42,7 +42,7 @@ public class PickUpV2 : MonoBehaviour
 
     }
 
-    public void WinCondition()
+   /* public void WinCondition()
     {
         if (Scoring.score >= 500)
         {
@@ -50,4 +50,5 @@ public class PickUpV2 : MonoBehaviour
 
         }
     }
+    */
 }

@@ -15,7 +15,7 @@ public class AmmoCount : MonoBehaviour
     {
         ammo = 20;
         playerammo = GetComponent<Text>();
-        drive.gameObject.SetActive(false);
+        //drive.gameObject.SetActive(false);
     }
 
 

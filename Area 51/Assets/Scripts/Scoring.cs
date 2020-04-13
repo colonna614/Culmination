@@ -13,7 +13,7 @@ public class Scoring : MonoBehaviour
     void Start()
     {
         playerScore = GetComponent<Text>();
-        drive.gameObject.SetActive(false);
+        //drive.gameObject.SetActive(false);
     }
 
 
