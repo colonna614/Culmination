@@ -16,6 +16,7 @@ public class Move2D : MonoBehaviour
     Vector2 bulletPos;
     public float fireRate = 0.5f;
     float nextFire = 0.0f;
+
     //bool bulletfacingRight = true;
 
 
@@ -59,7 +60,7 @@ public class Move2D : MonoBehaviour
         State1();
     }
 
-    
+
     private void UpdateAnimations(){
           // State 1
           anim.SetBool("isMoving", isMoving);
@@ -91,7 +92,7 @@ public class Move2D : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire){
             nextFire = Time.time + fireRate;
             //isShooting = true;
-            fire();
+            //fire();
 
 
         } else if(Input.GetKeyUp(KeyCode.Space)){
@@ -164,23 +165,24 @@ public class Move2D : MonoBehaviour
         }
     }
 
-    void fire ()
-    {
-        if (AmmoCount.ammo > 0)
-        {
-            bulletPos = transform.position;
-            AmmoCount.ammo -= 1;
-            if (isFacingRight)
-            {
-                bulletPos += new Vector2(+1f, -0.30f);
-                Instantiate(bulletToRight, bulletPos, Quaternion.identity);
-            }
-            else
-            {
-                bulletPos += new Vector2(-1f, -0.30f);
-                Instantiate(bulletToLeft, bulletPos, Quaternion.identity);
-            }
-        }
-    }
+    // void fire ()
+    // {
+    //     if (AmmoCount.ammo > 0)
+    //     {
+    //         bulletPos = transform.position;
+    //         AmmoCount.ammo -= 1;
+    //         if (isFacingRight)
+    //         {
+    //
+    //             bulletPos += new Vector2(+1f, -0.30f);
+    //             Instantiate(bulletToRight, bulletPos, Quaternion.identity);
+    //         }
+    //         else
+    //         {
+    //             bulletPos += new Vector2(-1f, -0.30f);
+    //             Instantiate(bulletToLeft, bulletPos, Quaternion.identity);
+    //         }
+    //     }
+    // }
 
 }
