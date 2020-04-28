@@ -13,11 +13,17 @@ public class Move2D : MonoBehaviour
     public GameObject bulletToRight, bulletToLeft;
     public GameObject GameOver;
     public GameObject StatsBar;
-    Vector2 bulletPos;
+    //Vector2 bulletPos;
     public float fireRate = 0.5f;
     float nextFire = 0.0f;
 
+    private Vector2 bulletPos;
+    private float lookAngle;
+
     //bool bulletfacingRight = true;
+    public Transform firePoint;
+    public Transform firePoint1;
+    public Transform firePoint2;
 
 
   private float movementInputDirection;
@@ -27,13 +33,14 @@ public class Move2D : MonoBehaviour
 
   public float moveSpeed;
   private bool isMoving;
-  private bool isShooting;
-  private bool isKnifeState;
-  private bool isKnifeAttacking;
-  private bool isKnifeMoving;
-  private bool isShotgunState;
-  private bool isShotgunShooting;
-  private bool isShotgunMoving;
+  public bool isShooting;
+  public bool isKnifeState;
+  public bool isKnifeAttacking;
+  public bool isKnifeMoving;
+  public bool isShotgunState;
+  public bool isShotgunShooting;
+  public bool isShotgunMoving;
+  public bool isIdle;
   //public bool isGrounded = false;
 
   private Rigidbody2D rb;
@@ -48,6 +55,11 @@ public class Move2D : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
+
+      bulletPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+      lookAngle = Mathf.Atan2(bulletPos.y, bulletPos.x) * Mathf.Rad2Deg;
+      transform.rotation = Quaternion.Euler(0f, 0f, lookAngle);
+
         CheckInput();
         CheckInputUp();
         CheckMovementDirection();
@@ -58,6 +70,8 @@ public class Move2D : MonoBehaviour
         // CheckCrouch();
         // CheckAttackRun();
         State1();
+        State2();
+        //waitForMousePress();
     }
 
 
@@ -67,20 +81,20 @@ public class Move2D : MonoBehaviour
           anim.SetBool("isShooting", isShooting);
           // State 2
           anim.SetBool("isKnifeState", isKnifeState);
-          //anim.SetBool("isKnifeMoving", isKnifeMoving);
           anim.SetBool("isKnifeAttacking", isKnifeAttacking);
           // State 3
           anim.SetBool("isShotgunState", isShotgunState);
-          //anim.SetBool("isShotgunMoving", isShotgunMoving);
           anim.SetBool("isShotgunShooting", isShotgunShooting);
         }
 
+        //
       private void ApplyMovement(){
           Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
           transform.position += movement * Time.deltaTime * moveSpeed;
 
         }
 
+        //
         private void ApplyMovementUp(){
             Vector3 movement = new Vector3(0f, Input.GetAxis("Vertical"), 0f);
             transform.position += movement * Time.deltaTime * moveSpeed;
@@ -88,18 +102,36 @@ public class Move2D : MonoBehaviour
           }
 
 
-      private void State1(){
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire){
-            nextFire = Time.time + fireRate;
-            //isShooting = true;
-            //fire();
+          // STATE 1 = Knife State
+          //
+      public void State1(){
+        if (Input.GetKey(KeyCode.Alpha3)){
+          isShotgunState = true;
+
+            //waitForMousePress();
 
 
-        } else if(Input.GetKeyUp(KeyCode.Space)){
-            isShooting = false;
+        } else if(Input.GetKey(KeyCode.Alpha2)){
+            isShotgunState = false;
+            isMoving = true;
         }
       }
 
+      public void State2(){
+        if (Input.GetKey(KeyCode.Alpha1)){
+          isKnifeState = true;
+
+
+
+
+        } else if(Input.GetKey(KeyCode.Alpha2)){
+            isKnifeState = false;
+            isMoving = true;
+            //waitForMousePress();
+        }
+      }
+
+      // Movement Left and Right
       private void CheckMovementDirection(){
           if (isFacingRight && movementInputDirection < 0){
               Flip();
@@ -110,12 +142,15 @@ public class Move2D : MonoBehaviour
 
           if (movementInputDirection != 0){
               isMoving = true;
+
           }
           else{
               isMoving = false;
+
           }
       }
 
+      // Movement Up and Down
       private void CheckMovementDirectionUp(){
           if (isFacingUp && movementInputDirectionUp < 0){
               //Flip();
@@ -126,9 +161,11 @@ public class Move2D : MonoBehaviour
 
           if (movementInputDirectionUp != 0){
               isMoving = true;
+
           }
           else{
               isMoving = false;
+
           }
       }
 
@@ -164,25 +201,28 @@ public class Move2D : MonoBehaviour
             MainCharacter.SetActive(false);
         }
     }
+    /*
+    void waitForMousePress ()
+    {
+        if (AmmoCount.ammo > 0)
+        {
+            bulletPos = transform.position;
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
 
-    // void fire ()
-    // {
-    //     if (AmmoCount.ammo > 0)
-    //     {
-    //         bulletPos = transform.position;
-    //         AmmoCount.ammo -= 1;
-    //         if (isFacingRight)
-    //         {
-    //
-    //             bulletPos += new Vector2(+1f, -0.30f);
-    //             Instantiate(bulletToRight, bulletPos, Quaternion.identity);
-    //         }
-    //         else
-    //         {
-    //             bulletPos += new Vector2(-1f, -0.30f);
-    //             Instantiate(bulletToLeft, bulletPos, Quaternion.identity);
-    //         }
-    //     }
-    // }
+              GameObject firedBullet = Instantiate(bulletToRight, firePoint.position, firePoint.rotation);
+              firedBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right;
+              AmmoCount.ammo -= 1;
+
+              // bulletPos += new Vector2 (+1f, -0.30f);
+              // Instantiate (bulletToRight, bulletPos, Quaternion.identity);
+
+              // GameObject firedBullet = Instantiate(bulletToRight, firePoint.position, firePoint.rotation);
+              // firedBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right;
+              // AmmoCount.ammo -= 3;
+            }
+        }
+    }
+    */
 
 }

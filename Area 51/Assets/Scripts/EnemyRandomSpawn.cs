@@ -11,7 +11,6 @@ public class EnemyRandomSpawn : MonoBehaviour
   public static bool spawnAllowed;
     public static int enemySpawnInit = 10;
     public int enemySpawnCounter = 10;
-    public GameObject waveComplete;
     public GameObject theShopOBJ;
     // Start is called before the first frame update
     void Start()
@@ -31,10 +30,9 @@ public class EnemyRandomSpawn : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.C))
          {
-            if (theShopOBJ.activeSelf == true || waveComplete.activeSelf == true)
+            if (theShopOBJ.activeSelf == true)
             {
                 enemySpawnCounter = enemySpawnInit;
-                waveComplete.SetActive(false);
                 theShopOBJ.SetActive(false);
                 Time.timeScale = 1;
                 inventoryMenu.canOpenInv = true;

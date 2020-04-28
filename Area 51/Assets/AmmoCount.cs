@@ -8,7 +8,6 @@ public class AmmoCount : MonoBehaviour
 {
     Text playerammo;
     public static int ammo;
-    public GameObject drive;
 
 
     void Start()
@@ -22,6 +21,6 @@ public class AmmoCount : MonoBehaviour
 
     void Update()
     {
-        playerammo.text = "Ammo: " + ammo.ToString();
+        playerammo.text = "- " + ammo.ToString();
     }
 }

@@ -5,11 +5,16 @@ using UnityEngine;
 public class MoveAndShootMouse : MonoBehaviour
 {
   public Transform firePoint;
+  public Transform firePoint1;
+  public Transform firePoint2;
+
+  public bool isShotgunState;
 
   public GameObject bulletToRight;
 
   private Vector2 bulletPos;
   private float lookAngle;
+
 
     void Update()
     {
@@ -20,10 +25,20 @@ public class MoveAndShootMouse : MonoBehaviour
       if (AmmoCount.ammo > 0){
         bulletPos = transform.position;
 
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)){
           ShootBullet();
           AmmoCount.ammo -= 1;
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isShotgunState == true){
+          ShootBullet();
+          AmmoCount.ammo -= 3;
+        }
+
+        // if (Input.GetKeyDown(KeyCode.Mouse0) && isShotgunState == true){
+        //   ShootBullet();
+        //   AmmoCount.ammo -= 3;
+        // }
 
       }
 
@@ -33,6 +48,15 @@ public class MoveAndShootMouse : MonoBehaviour
       GameObject firedBullet = Instantiate(bulletToRight, firePoint.position, firePoint.rotation);
       firedBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right;
     }
+
+    // public void ShootBulletSpread(){
+    //   GameObject firedBullet = Instantiate(bulletToRight, firePoint.position, firePoint.rotation);
+    //   GameObject firedBullet2 = Instantiate(bulletToRight, firePoint1.position, firePoint.rotation);
+    //   GameObject firedBullet3 = Instantiate(bulletToRight, firePoint2.position, firePoint.rotation);
+    //   firedBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right;
+    //   firedBullet2.GetComponent<Rigidbody2D>().velocity = firePoint1.right;
+    //   firedBullet3.GetComponent<Rigidbody2D>().velocity = firePoint2.right;
+    // }
 
 
 

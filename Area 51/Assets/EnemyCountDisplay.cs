@@ -19,6 +19,6 @@ public class EnemyCountDisplay : MonoBehaviour
 
     void Update()
     {
-        enemiesRemaining.text = "Enemies Remaining: " + enemies.ToString() + "/" +EnemyRandomSpawn.enemySpawnInit;
+        enemiesRemaining.text = "  " + enemies.ToString() + "/" +EnemyRandomSpawn.enemySpawnInit;
     }
 }

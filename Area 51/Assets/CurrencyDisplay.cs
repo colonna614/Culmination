@@ -17,6 +17,6 @@ public class CurrencyDisplay : MonoBehaviour
 
     void Update()
     {
-        money.text = "Money: $" + TheShop.currency;
+        money.text = "- " + TheShop.currency;
     }
 }
