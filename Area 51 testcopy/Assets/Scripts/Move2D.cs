@@ -230,6 +230,7 @@ public class Move2D : MonoBehaviour
     {
         if(col.gameObject.tag == "Obstacle")
         {
+            SoundManagerScript.PlaySound("SFX/GetHit");
             Debug.Log("OUCH!");
             HealthScript.health -= 10f;
         }

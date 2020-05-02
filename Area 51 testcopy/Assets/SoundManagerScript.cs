@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip Pistol, Shotgun, CrateOpening, Knife, ChaChing;
+    public static AudioClip Pistol, Shotgun, CrateOpening, Knife, ChaChing, GetHit;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -15,6 +15,7 @@ public class SoundManagerScript : MonoBehaviour
         Shotgun = Resources.Load<AudioClip>("SFX/Shotgun");
         CrateOpening = Resources.Load<AudioClip>("SFX/CrateOpening");
         ChaChing = Resources.Load<AudioClip>("SFX/ChaChing");
+        GetHit = Resources.Load<AudioClip>("SFX/GetHit");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -43,6 +44,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "SFX/ChaChing":
                 audioSrc.PlayOneShot(ChaChing);
+                break;
+            case "SFX/GetHit":
+                audioSrc.PlayOneShot(GetHit);
                 break;
         }
     }

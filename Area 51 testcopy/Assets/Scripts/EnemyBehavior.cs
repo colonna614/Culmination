@@ -60,6 +60,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            SoundManagerScript.PlaySound("SFX/GetHit");
             HealthScript.health -= 10f;
             isDead = true;
            
