@@ -21,7 +21,7 @@ public class BulletScript : MonoBehaviour
         {
             //Debug.Log("WE HIT");
             Destroy(gameObject);
-            Scoring.score += 100;
+            //Scoring.score += 100;
             //col.gameObject.GetComponent<EnemyBehavior>().Die();
         }
         else if(col.gameObject.tag == "Obstacle")

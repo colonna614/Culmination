@@ -69,6 +69,8 @@
     <Compile Include="Assets\FixTheEnemiesZ.cs" />
     <Compile Include="Assets\GameOverReset.cs" />
     <Compile Include="Assets\inventoryMenu.cs" />
+    <Compile Include="Assets\KnifeScript.cs" />
+    <Compile Include="Assets\knifestabbingthing.cs" />
     <Compile Include="Assets\PickUpV2.cs" />
     <Compile Include="Assets\Scripts\attack.cs" />
     <Compile Include="Assets\Scripts\Battle Scripts\boss.cs" />
@@ -108,22 +110,22 @@
     <Compile Include="Assets\TheShop.cs" />
     <Compile Include="Assets\WaveSystem.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/colon/Desktop/Area 51 4-28-20/Area 51 testcopy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/colon/Desktop/Culmination Project/Area 51 testcopy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/colon/Desktop/Area 51 4-28-20/Area 51 testcopy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/colon/Desktop/Culmination Project/Area 51 testcopy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/colon/Desktop/Area 51 4-28-20/Area 51 testcopy/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/colon/Desktop/Culmination Project/Area 51 testcopy/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/colon/Desktop/Area 51 4-28-20/Area 51 testcopy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/colon/Desktop/Culmination Project/Area 51 testcopy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/colon/Desktop/Area 51 4-28-20/Area 51 testcopy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/colon/Desktop/Culmination Project/Area 51 testcopy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/colon/Desktop/Area 51 4-28-20/Area 51 testcopy/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/colon/Desktop/Culmination Project/Area 51 testcopy/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -312,13 +314,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.11f1/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/colon/Desktop/Area 51 4-28-20/Area 51 testcopy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/colon/Desktop/Culmination Project/Area 51 testcopy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/colon/Desktop/Area 51 4-28-20/Area 51 testcopy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/colon/Desktop/Culmination Project/Area 51 testcopy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/colon/Desktop/Area 51 4-28-20/Area 51 testcopy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/colon/Desktop/Culmination Project/Area 51 testcopy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.11f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

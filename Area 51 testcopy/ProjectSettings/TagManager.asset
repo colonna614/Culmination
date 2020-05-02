@@ -12,6 +12,8 @@ TagManager:
   - Obstacle
   - Ammo
   - Health
+  - knifeHit
+  - Knife
   layers:
   - Default
   - TransparentFX

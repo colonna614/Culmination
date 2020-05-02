@@ -50,6 +50,7 @@ public class EnemyBehavior : MonoBehaviour
     {
       //  Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Scoring.score += 100;
         EnemyCountDisplay.enemies -= 1;
         killcount += 1;
         TheShop.currency += 10;
@@ -63,11 +64,19 @@ public class EnemyBehavior : MonoBehaviour
             isDead = true;
            
         }
-        else if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
             isDead = true;
-           
         }
+        
 
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Knife")
+        {
+            Debug.Log("Knife hit something");
+            isDead = true;
+        }
     }
 }

@@ -41,11 +41,18 @@ public class Move2D : MonoBehaviour
   public bool isShotgunShooting;
   public bool isShotgunMoving;
   public bool isIdle;
-  //public bool isGrounded = false;
+    
+    public bool isShotgunActive = false;
+    public bool isPistolActive =true;
+    public bool isKnifeActive =false;
+    public bool isKnifeSwing =false;
+    //public bool isGrounded = false;
 
-  private Rigidbody2D rb;
+    private Rigidbody2D rb;
   private Animator anim;
 
+    public GameObject KnifeBox;
+    int knifetimer = 0;
 
     // Start is called before the first frame update
     void Start(){
@@ -64,31 +71,32 @@ public class Move2D : MonoBehaviour
         CheckInputUp();
         CheckMovementDirection();
         CheckMovementDirectionUp();
-        //UpdateAnimations();
+        UpdateAnimations();
         ApplyMovement();
         ApplyMovementUp();
         // CheckCrouch();
         // CheckAttackRun();
-       // State1();
+        State1();
         //State2();
         //waitForMousePress();
     }
 
 
-    /*private void UpdateAnimations(){
-          // State 1
-          anim.SetBool("isMoving", isMoving);
-          anim.SetBool("isShooting", isShooting);
-          // State 2
-          anim.SetBool("isKnifeState", isKnifeState);
-          anim.SetBool("isKnifeAttacking", isKnifeAttacking);
-          // State 3
-          anim.SetBool("isShotgunState", isShotgunState);
-          anim.SetBool("isShotgunShooting", isShotgunShooting);
-        }
-        */
-        //
-      private void ApplyMovement(){
+    private void UpdateAnimations()
+    {
+        // State 1
+        anim.SetBool("isMoving", isMoving);
+        anim.SetBool("isPistolActive", isPistolActive);
+        // State 2
+        anim.SetBool("isKnifeActive", isKnifeActive);
+        anim.SetBool("isKnifeSwing", isKnifeSwing);
+        // State 3
+        anim.SetBool("isShotgunActive", isShotgunActive);
+        //anim.SetBool("isShotgunShooting", isShotgunShooting);
+    }
+
+    //
+    private void ApplyMovement(){
           Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
           transform.position += movement * Time.deltaTime * moveSpeed;
 
@@ -102,37 +110,70 @@ public class Move2D : MonoBehaviour
           }
 
 
-          // STATE 1 = Knife State
-          //
-      public void State1(){
-        if (Input.GetKey(KeyCode.Alpha3)){
-          isShotgunState = true;
-
-            //waitForMousePress();
-
-
-        } else if(Input.GetKey(KeyCode.Alpha2)){
-            isShotgunState = false;
-            isMoving = true;
+    // STATE 1 = Knife State
+    //
+    public void State1()
+    {
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            isPistolActive = true;
+            isKnifeActive = false;
+            isShotgunActive = false;   
         }
-      }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            isPistolActive = false;
+            isKnifeActive = true;
+            isShotgunActive = false;
+            isKnifeSwing = false;
 
-      public void State2(){
-        if (Input.GetKey(KeyCode.Alpha1)){
-          isKnifeState = true;
-
-
-
-
-        } else if(Input.GetKey(KeyCode.Alpha2)){
-            isKnifeState = false;
-            isMoving = true;
-            //waitForMousePress();
         }
-      }
+        if (Input.GetKey(KeyCode.Alpha3) && MoveAndShootMouse.purchasedShotgun)
+        {
+            isPistolActive = false;
+            isKnifeActive = false;
+            isShotgunActive = true;
+        }
+        if (isKnifeActive)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                isKnifeSwing = true;
+                KnifeBox.SetActive(true);
+            }
+            else
+            {
+                isKnifeSwing = false;
+            }
+        }
+        if (KnifeBox.activeSelf ==true)
+        {
+            knifetimer += 1;
+        }
+        if (knifetimer >= 100)
+        {
+            KnifeBox.SetActive(false);
+            knifetimer = 0;
+        }
+        //Debug.Log(knifetimer + "knife timer");
+    }
+    /*
+          public void State2(){
+            if (Input.GetKey(KeyCode.Alpha1)){
+              isKnifeState = true;
 
-      // Movement Left and Right
-      private void CheckMovementDirection(){
+
+
+
+            } else if(Input.GetKey(KeyCode.Alpha2)){
+                isKnifeState = false;
+                isMoving = true;
+                //waitForMousePress();
+            }
+          }
+          */
+    // Movement Left and Right
+    private void CheckMovementDirection(){
           if (isFacingRight && movementInputDirection < 0){
               Flip();
           }

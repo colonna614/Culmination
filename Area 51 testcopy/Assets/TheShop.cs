@@ -22,7 +22,8 @@ public class TheShop : MonoBehaviour
     {
         if (theShopOBJ.activeSelf == true)
         {
-            if (Input.GetKeyDown(KeyCode.H) && currency >=60 && HealthScript.health <100)
+            MoveAndShootMouse.canShoot = false;
+            if (Input.GetKeyDown(KeyCode.H) && currency >= 60 && HealthScript.health < 100)
             {
                 HealthScript.health += 10;
                 currency -= 60;
@@ -38,6 +39,7 @@ public class TheShop : MonoBehaviour
                 ShotgunSprite.enabled = true;
                 Number3.enabled = true;
                 ShotSoldOut.enabled = true;
+                AmmoCount.ammo += 15;
                 currency -= 200;
             }
             if (HealthScript.health >= 100)
@@ -48,6 +50,10 @@ public class TheShop : MonoBehaviour
             {
                 healthSoldOut.enabled = false;
             }
+        }
+        else
+        {
+            MoveAndShootMouse.canShoot = true;
         }
     }
 }
