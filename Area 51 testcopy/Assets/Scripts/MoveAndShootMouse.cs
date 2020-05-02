@@ -34,6 +34,7 @@ public class MoveAndShootMouse : MonoBehaviour
             {
                 if (pistolState == true)
                 {
+                    SoundManagerScript.PlaySound("SFX/Pistol");
                     ShootBullet();
                     AmmoCount.ammo -= 1;
                 }
@@ -43,6 +44,7 @@ public class MoveAndShootMouse : MonoBehaviour
                 }
                 else if (isShotgunState == true && AmmoCount.ammo >= 3)
                 {
+                    SoundManagerScript.PlaySound("SFX/Shotgun");
                     ShootBulletSpread();
                     AmmoCount.ammo -= 3;
                 }

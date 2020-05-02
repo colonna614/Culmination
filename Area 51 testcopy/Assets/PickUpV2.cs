@@ -22,6 +22,7 @@ public class PickUpV2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            SoundManagerScript.PlaySound("SFX/CrateOpening");
             PickUpCrate();
         }
     }
@@ -29,6 +30,7 @@ public class PickUpV2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            SoundManagerScript.PlaySound("SFX/CrateOpening");
             PickUpCrate();
         }
     }

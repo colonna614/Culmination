@@ -25,16 +25,19 @@ public class TheShop : MonoBehaviour
             MoveAndShootMouse.canShoot = false;
             if (Input.GetKeyDown(KeyCode.H) && currency >= 60 && HealthScript.health < 100)
             {
+                SoundManagerScript.PlaySound("SFX/ChaChing");
                 HealthScript.health += 10;
                 currency -= 60;
             }
             if (Input.GetKeyDown(KeyCode.B) && currency >= 80)
             {
+                SoundManagerScript.PlaySound("SFX/ChaChing");
                 AmmoCount.ammo += 15;
                 currency -= 80;
             }
             if (Input.GetKeyDown(KeyCode.Alpha3) && currency >= 200 && MoveAndShootMouse.purchasedShotgun == false)
             {
+                SoundManagerScript.PlaySound("SFX/ChaChing");
                 MoveAndShootMouse.purchasedShotgun = true;
                 ShotgunSprite.enabled = true;
                 Number3.enabled = true;

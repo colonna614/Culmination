@@ -138,6 +138,7 @@ public class Move2D : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
+                SoundManagerScript.PlaySound("SFX/Knife");
                 isKnifeSwing = true;
                 KnifeBox.SetActive(true);
             }
