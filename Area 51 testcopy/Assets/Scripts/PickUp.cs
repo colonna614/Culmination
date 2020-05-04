@@ -32,7 +32,7 @@ public class PickUp : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
 
-            pickUpText.GetComponent<Text>().enabled = true;
+            //pickUpText.GetComponent<Text>().enabled = true;
             pickUpAllowed = true;
         }
     }
@@ -42,7 +42,7 @@ public class PickUp : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
 
-            pickUpText.GetComponent<Text>().enabled = false;
+            //pickUpText.GetComponent<Text>().enabled = false;
             pickUpAllowed = false;
         }
     }

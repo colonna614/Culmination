@@ -54,9 +54,6 @@ public class TheShop : MonoBehaviour
                 healthSoldOut.enabled = false;
             }
         }
-        else
-        {
-            MoveAndShootMouse.canShoot = true;
-        }
+        
     }
 }

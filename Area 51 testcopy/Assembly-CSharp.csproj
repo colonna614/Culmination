@@ -68,9 +68,11 @@
     <Compile Include="Assets\ExitGame.cs" />
     <Compile Include="Assets\FixTheEnemiesZ.cs" />
     <Compile Include="Assets\GameOverReset.cs" />
+    <Compile Include="Assets\highscore.cs" />
     <Compile Include="Assets\inventoryMenu.cs" />
     <Compile Include="Assets\KnifeScript.cs" />
     <Compile Include="Assets\knifestabbingthing.cs" />
+    <Compile Include="Assets\pause.cs" />
     <Compile Include="Assets\PickUpV2.cs" />
     <Compile Include="Assets\Scripts\attack.cs" />
     <Compile Include="Assets\Scripts\Battle Scripts\boss.cs" />

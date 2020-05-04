@@ -21,14 +21,11 @@ ScriptsOnlyBuild:
     - PickUpV2
     - Scoring
     - ShootingScript
+    - SoundManagerScript
     - TheShop
     - WaveSystem
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
+    - highscore
+    - pause
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
@@ -63,6 +60,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -94,31 +95,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10032}
     - Class: 114
-      Script: {instanceID: 10146}
+      Script: {instanceID: 10052}
     - Class: 114
-      Script: {instanceID: 10156}
+      Script: {instanceID: 10148}
     - Class: 114
-      Script: {instanceID: 10194}
+      Script: {instanceID: 10158}
     - Class: 114
-      Script: {instanceID: 10236}
+      Script: {instanceID: 10196}
     - Class: 114
-      Script: {instanceID: 10310}
+      Script: {instanceID: 10238}
     - Class: 114
-      Script: {instanceID: 10464}
+      Script: {instanceID: 10312}
     - Class: 114
-      Script: {instanceID: 10484}
+      Script: {instanceID: 10466}
     - Class: 114
-      Script: {instanceID: 10600}
+      Script: {instanceID: 10486}
     - Class: 114
-      Script: {instanceID: 10630}
+      Script: {instanceID: 10602}
     - Class: 114
-      Script: {instanceID: 10704}
+      Script: {instanceID: 10632}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10706}
     - Class: 114
-      Script: {instanceID: 10806}
+      Script: {instanceID: 10754}
     - Class: 114
-      Script: {instanceID: 10908}
+      Script: {instanceID: 10812}
+    - Class: 114
+      Script: {instanceID: 10914}
+    - Class: 114
+      Script: {instanceID: 22392}
+    - Class: 114
+      Script: {instanceID: 33770}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -158,6 +165,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
     - Class: 91
@@ -177,9 +186,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9504}
     - Class: 114
-      Script: {instanceID: 10330}
+      Script: {instanceID: 10332}
     - Class: 114
-      Script: {instanceID: 80588}
+      Script: {instanceID: 14142}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -209,6 +218,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -226,14 +239,12 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9506}
     - Class: 114
-      Script: {instanceID: 10330}
+      Script: {instanceID: 10332}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 157
-      Script: {instanceID: 0}
-    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -792,7 +803,7 @@ ScriptsOnlyBuild:
     className: changegame
   - hash:
       serializedVersion: 2
-      Hash: 324ea11a6c34f7973255ff26d5d49a21
+      Hash: 02491ba019c05f6522e08e024f03e1a0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Move2D
@@ -1248,6 +1259,12 @@ ScriptsOnlyBuild:
     className: MouseToAim
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundManagerScript
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1266,7 +1283,7 @@ ScriptsOnlyBuild:
     className: BulletScriptNewV
   - hash:
       serializedVersion: 2
-      Hash: 3af54c317397efa2dc296520854fa529
+      Hash: a3d99be0eb6c951c38abc06f03cd5790
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickUpV2
@@ -1488,7 +1505,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 1f309bd2c3eee9819d0af33468c1d5fe
+      Hash: 7a0b3a5eb3fa5ecd7d27f8cb342dfa26
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MoveAndShootMouse
@@ -1498,6 +1515,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuController
+  - hash:
+      serializedVersion: 2
+      Hash: 72acb47553d30d6d6889c51858716bb8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: knifestabbingthing
   - hash:
       serializedVersion: 2
       Hash: 5372ed2ce39229b1ac910757999a8be2
@@ -1510,6 +1533,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KnifeScript
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1954,6 +1983,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: db3161a3f10e5010b2a2012721b118a0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: pause
+  - hash:
+      serializedVersion: 2
+      Hash: 0c374a12116e2756bbe6c816b27c2426
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: highscore
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
