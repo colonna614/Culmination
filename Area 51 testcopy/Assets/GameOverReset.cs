@@ -29,6 +29,8 @@ public class GameOverReset : MonoBehaviour
             Scoring.score = 0;
             Time.timeScale = 1;
             MoveAndShootMouse.purchasedShotgun = false;
+            MoveAndShootMouse.pistolState = true;
+            MoveAndShootMouse.isShotgunState = false;
         }
 
     }

@@ -41,6 +41,7 @@ public class Move2D : MonoBehaviour
   public bool isShotgunShooting;
   public bool isShotgunMoving;
   public bool isIdle;
+    public static bool OutOfShop =true;
     
     public bool isShotgunActive = false;
     public bool isPistolActive =true;
@@ -134,7 +135,7 @@ public class Move2D : MonoBehaviour
             isKnifeActive = false;
             isShotgunActive = true;
         }
-        if (isKnifeActive)
+        if (isKnifeActive && OutOfShop)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {

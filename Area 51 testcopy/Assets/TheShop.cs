@@ -23,6 +23,7 @@ public class TheShop : MonoBehaviour
         if (theShopOBJ.activeSelf == true)
         {
             MoveAndShootMouse.canShoot = false;
+            Move2D.OutOfShop = false;
             if (Input.GetKeyDown(KeyCode.H) && currency >= 60 && HealthScript.health < 100)
             {
                 SoundManagerScript.PlaySound("SFX/ChaChing");

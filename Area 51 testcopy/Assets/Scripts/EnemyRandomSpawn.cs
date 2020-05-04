@@ -35,6 +35,7 @@ public class EnemyRandomSpawn : MonoBehaviour
                 enemySpawnCounter = enemySpawnInit;
                 theShopOBJ.SetActive(false);
                 MoveAndShootMouse.canShoot = true;
+                Move2D.OutOfShop = true;
                 Time.timeScale = 1;
                 inventoryMenu.canOpenInv = true;
             }
